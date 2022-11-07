@@ -1,0 +1,13 @@
+[Unit]
+Description=Switch power mode depends on battary
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Restart=always
+RestartSec=1
+Environment=STARTUP_WAIT=30s
+ExecStart=/home/dante/github/dell_fedora/power_monitor.sh
+
+[Install]
+WantedBy=default.target
